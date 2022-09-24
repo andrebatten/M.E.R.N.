@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Rock On </h1>
+    
+    <a href="/mybands">My Bands</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/clear">Log Out</a>
+    {% for band in bands %}
+    <form action="/update/user/{{band.id}}" method="post">
+        <p>Band Name:<input type="text" name="name" value="{{band.name}}"></p>
+        <p>Music Genre:<input type="text" name="genre" value="{{band.genre}}"></p>
+        <p>Home City<input type="text" name="city" value="{{band.city}}" ></p>
+        <input type="submit" value="submit">
+    </form>
+    {% endfor %}
+</body>
+</html>
